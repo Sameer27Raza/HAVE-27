@@ -1,35 +1,33 @@
 {
-  "name": "haven",
-  "version": "1.0.0",
-  "description": "Haven desktop and mobile app",
-  "main": "electron-main.js",
-  "scripts": {
-    "desktop:start": "electron .",
-    "desktop:build": "electron-packager . \"Haven\" --platform=win32 --arch=x64 --out=dist-desktop --overwrite --icon=icon.ico --prune=true --ignore=\"^(dist-desktop|android|\\.git|\\.github)\"",
-    "mobile:prepare": "node build-mobile-assets.js",
-    "mobile:sync": "node build-mobile-assets.js && npx cap sync android",
-    "mobile:open": "npx cap open android"
+  "name": "pdfjs-dist",
+  "version": "4.10.38",
+  "main": "build/pdf.mjs",
+  "types": "types/src/pdf.d.ts",
+  "description": "Generic build of Mozilla's PDF.js library.",
+  "keywords": [
+    "Mozilla",
+    "pdf",
+    "pdf.js"
+  ],
+  "homepage": "https://mozilla.github.io/pdf.js/",
+  "bugs": "https://github.com/mozilla/pdf.js/issues",
+  "license": "Apache-2.0",
+  "optionalDependencies": {
+    "@napi-rs/canvas": "^0.1.65"
+  },
+  "browser": {
+    "canvas": false,
+    "fs": false,
+    "http": false,
+    "https": false,
+    "url": false
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sameer27Raza/Human-AI-Therapist.git"
+    "url": "git+https://github.com/mozilla/pdf.js.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/Sameer27Raza/Human-AI-Therapist/issues"
+  "engines": {
+    "node": ">=20"
   },
-  "homepage": "https://github.com/Sameer27Raza/Human-AI-Therapist#readme",
-  "devDependencies": {
-    "@capacitor/android": "^8.6.0",
-    "@capacitor/cli": "^8.6.0",
-    "@capacitor/core": "^8.6.0",
-    "electron": "^45.3.0",
-    "electron-packager": "^17.1.2"
-  },
-  "dependencies": {
-    "pdfjs-dist": "4.10.38"
-  }
+  "scripts": {}
 }
